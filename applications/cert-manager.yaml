@@ -30,6 +30,12 @@ spec:
             requests:
               cpu: 10m
               memory: 32Mi
+  ignoreDifferences:
+    - group: admissionregistration.k8s.io
+      kind: ValidatingWebhookConfiguration
+      name: cert-manager-webhook
+      jqPathExpressions:
+        - .webhooks[].clientConfig.caBundle
   destination:
     server: https://kubernetes.default.svc
     namespace: cert-manager
@@ -39,3 +45,4 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+      - RespectIgnoreDifferences=true
