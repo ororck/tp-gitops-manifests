@@ -1,0 +1,56 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: movies
+  namespace: demo
+  labels:
+    app: movies
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: movies
+  template:
+    metadata:
+      labels:
+        app: movies
+    spec:
+      containers:
+        - name: movies
+          image: acrmsaidigitops.azurecr.io/tp-gitops-app:3bd7aeb
+          command: ["/app/movies"]
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              cpu: 25m
+              memory: 32Mi
+            limits:
+              memory: 128Mi
+          readinessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 3
+            periodSeconds: 10
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            runAsNonRoot: true
+            capabilities:
+              drop: ["ALL"]
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: movies
+  namespace: demo
+  labels:
+    app: movies
+spec:
+  type: ClusterIP
+  selector:
+    app: movies
+  ports:
+    - port: 8080
+      targetPort: 8080
