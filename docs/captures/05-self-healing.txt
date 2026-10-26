@@ -1,0 +1,15 @@
+# before 2026-10-26T14:34:11+01:00
+NAME     READY   UP-TO-DATE   AVAILABLE   AGE
+api      1/1     1            1           18m
+books    1/1     1            1           18m
+movies   1/1     1            1           18m
+# delete 2026-10-26T14:34:12+01:00
+deployment.apps "movies" deleted from demo namespace
+# watch
+# recreated by ArgoCD 2026-10-26T14:34:16+01:00
+NAME     READY   UP-TO-DATE   AVAILABLE   AGE
+api      1/1     1            1           19m
+books    1/1     1            1           19m
+movies   0/1     1            0           2s
+NAME   SYNC STATUS   HEALTH STATUS
+demo   Synced        Progressing

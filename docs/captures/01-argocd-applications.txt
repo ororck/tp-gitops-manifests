@@ -1,0 +1,10 @@
+# 2026-10-26T14:34:08+01:00
+NAME                   SYNC STATUS   HEALTH STATUS
+alloy                  Synced        Healthy
+cert-manager           Synced        Healthy
+cert-manager-issuers   Synced        Healthy
+demo                   Synced        Healthy
+grafana                Synced        Healthy
+ingress-nginx          Synced        Healthy
+loki                   Synced        Healthy
+root                   Synced        Healthy

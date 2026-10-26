@@ -1,0 +1,17 @@
+# 2026-10-26T14:34:11+01:00
+Grafana https://grafana.20.82.52.99.nip.io, data source provisioned by ConfigMap, query {namespace="demo"} through the Grafana proxy
+{'app': 'api', 'container': 'api', 'detected_level': 'unknown', 'instance': 'demo/api-86df46d5cf-2mhs9:api', 'job': 'loki.source.kubernetes.pods', 'namespace': 'demo', 'pod': 'api-86df46d5cf-2mhs9', 'service_name': 'api'}
+   [GIN] 2026/10/26 - 13:34:10 | 200 |   2.22ms |      10.224.0.4 | GET      "/data"
+
+   [GIN] 2026/10/26 - 13:33:29 | 200 |  20.65ms |      10.224.0.4 | GET      "/data"
+
+{'app': 'books', 'container': 'books', 'detected_level': 'unknown', 'instance': 'demo/books-7d8977b6d6-v84tk:books', 'job': 'loki.source.kubernetes.pods', 'namespace': 'demo', 'pod': 'books-7d8977b6d6-v84tk', 'service_name': 'books'}
+   [GIN] 2026/10/26 - 13:34:10 | 200 |   24.3µs |     10.244.0.36 | GET      "/books"
+
+   [GIN] 2026/10/26 - 13:33:29 | 200 | 485.206µs |     10.244.0.36 | GET      "/books"
+
+{'app': 'movies', 'container': 'movies', 'detected_level': 'unknown', 'instance': 'demo/movies-84fd4fc677-vl7q9:movies', 'job': 'loki.source.kubernetes.pods', 'namespace': 'demo', 'pod': 'movies-84fd4fc677-vl7q9', 'service_name': 'movies'}
+   [GIN] 2026/10/26 - 13:34:10 | 200 | 44.301µs |     10.244.0.36 | GET      "/movies"
+
+   [GIN] 2026/10/26 - 13:33:29 | 200 |   1.13ms |     10.244.0.36 | GET      "/movies"
+
