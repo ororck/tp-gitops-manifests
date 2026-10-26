@@ -1,0 +1,25 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: api
+  namespace: demo
+  annotations:
+    cert-manager.io/cluster-issuer: ca
+spec:
+  ingressClassName: nginx
+  tls:
+    - secretName: api-tls
+      hosts:
+        - api.20.82.52.99.nip.io
+  rules:
+    - host: api.20.82.52.99.nip.io
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: api
+                port:
+                  number: 8080
