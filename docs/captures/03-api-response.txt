@@ -1,0 +1,8 @@
+# 2026-10-26T14:34:10+01:00
+$ curl -k https://api.20.82.52.99.nip.io/data
+{"app":"API Gateway","data":{"books":["Book 1","Book 2","Book 3"],"movies":["Movie 1","Movie 2","Movie 3"]}}
+
+NAMESPACE      NAME          READY   SECRET           AGE
+cert-manager   root-ca       True    root-ca-secret   18m
+demo           api-tls       True    api-tls          18m
+monitoring     grafana-tls   True    grafana-tls      18m
