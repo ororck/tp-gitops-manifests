@@ -36,6 +36,7 @@ spec:
       name: cert-manager-webhook
       jqPathExpressions:
         - .webhooks[].clientConfig.caBundle
+        - .webhooks[].namespaceSelector
   destination:
     server: https://kubernetes.default.svc
     namespace: cert-manager
